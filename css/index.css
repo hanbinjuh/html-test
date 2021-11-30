@@ -144,6 +144,7 @@ header div nav a {
           flex-direction: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  list-style-type: none;
 }
 
 .work ul li {

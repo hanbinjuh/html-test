@@ -119,6 +119,7 @@ header{
     ul{
         width: $content-width; margin: 0 auto;
         @include flex(space-between, 0, 0, wrap);
+        list-style-type: none;
         // display: flex;
         // flex-wrap: wrap;
         // justify-content: space-between;
