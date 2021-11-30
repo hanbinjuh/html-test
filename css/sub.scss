@@ -1,0 +1,269 @@
+@import '_common.scss';
+
+body{
+    margin: 0;
+}
+
+header{
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    background-color: gray; opacity: 0.8;
+    z-index: 1;
+    div{
+        // @include flex(space-between, center, flex-start, nowrap);
+        // width: $content-width;
+        margin: 0 auto;
+        h1{
+            font-size: 0;
+            width: 93px;
+            height: 36px;
+            background: url('../img/logo.png') no-repeat;
+            display: block;
+            opacity: 0;
+        }
+        nav{
+            a{
+                color: white;
+                padding: 0 24px;
+                display: inline-block;
+            }
+        }
+    }}
+
+
+.visual{
+    width: 100vw; 
+    margin: 0;
+    z-index: 9999;
+    img{
+    width: 100vw;
+    margin: 0;
+    }
+}
+
+.services{
+    text-align: center;
+    padding: 100px 0;
+    @include h2;
+    h2{text-transform: capitalize;}
+    ul{
+        width: $content-width;
+        margin: 60px auto;
+        list-style-type: none;
+        @include flex(space-between, flex-start, row, nowrap);
+        li{
+            display: block;
+            width: 30%;
+            &::before{
+                content:'';
+                display: block;
+                width: 55px; height: 55px;
+                margin: 0 auto;
+                padding: 5% 0;
+                // border: 3px solid $point-color;
+                // border-radius: 50%;
+                }
+            
+            &:nth-of-type(1)::before{
+                background: url('../../8일차/img/ic_01.png') no-repeat;
+            }
+            &:nth-of-type(2)::before{
+                background: url('../../8일차/img/ic_02.png') no-repeat;
+            }
+            &:nth-of-type(3)::before{
+                background: url('../../8일차/img/ic_03.png') no-repeat;
+            }
+        }
+    }
+}
+
+.me{
+    justify-content: space-between;
+    background-color: rgb(255, 254, 187);
+    div{
+        width: $content-width;
+        margin: 60px auto;
+        @include flex(space-between, 0, row, nowrap);
+        .photo{
+            width: 40%;
+            padding: 0;
+            img{width: 100%;}
+        }
+        .int{
+            width: 55%;
+            padding: 0;
+            flex-direction: column;
+            @include h2;
+            h2{
+                text-transform: uppercase;
+                display: block;
+                line-height: 1;
+
+                small{
+                    color: gray;
+                    margin: 1% 0 5%;
+                    font-size: 1rem;
+                    line-height: 0.7;
+                }
+            }
+            b{
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            p{
+                background-color: #eee;
+                span{
+                    color: white;
+                    font-weight: bold;
+                    display: block;
+                    text-align: right;
+                    padding: 1% 2% 1% 0;
+                    background-color: $point-color;
+                
+                    $skill : ( 1:90%, 2:80%, 3:90%, 4:70%);
+                    @each $key, $value in $skill {
+                        &:nth-of-type(#{$key}){width: $value}
+                    }
+                // &:nth-of-type(2){width: 80%;}
+                // &:nth-of-type(3){width: 90%;}
+                // &:nth-of-type(4){width: 70%;}
+                }
+                
+            }
+        }
+    
+    }}   
+
+.contact{
+    background-color: #222;
+    text-align: center;
+    padding: 5% 0;
+    h2{color: white;}
+
+    input{
+        width: 20%;
+        // height: 50%
+        padding: 17px;
+        margin: 3px;
+        border: none;
+        outline: none;
+        vertical-align: middle;
+        &::placeholder{color: #222;};
+    }
+    a{
+        @include btn;
+        color: #222;
+        text-transform: uppercase;
+        vertical-align: middle;}
+    }
+
+footer{
+    background-color: #bbb;
+    color: grey;
+    text-align: center;
+    padding: 2% 3%;}
+    
+
+
+    
+    @import '_media.scss';
+
+    @include media($mobile, $tablet-w){ 
+        .visual{
+            width: 100vw;}
+    
+        .services{
+            text-align: center;
+            padding: 100px 0;
+            @include h2;
+            h2{text-transform: capitalize;}
+            ul{
+                width: 100%;
+                margin: 60px auto;
+                list-style-type: none;
+                @include flex(space-between, flex-start, column, nowrap);
+                li{
+                    display: block;
+                    width: 100%;
+                    &::before{
+                        content:'';
+                        display: block;
+                        width: 55px; height: 55px;
+                        margin: 0 auto;
+                        padding: 5% 0;
+                        }
+                    
+                    &:nth-of-type(1)::before{
+                        background: url('../../8일차/img/ic_01.png') no-repeat;
+                    }
+                    &:nth-of-type(2)::before{
+                        background: url('../../8일차/img/ic_02.png') no-repeat;
+                    }
+                    &:nth-of-type(3)::before{
+                        background: url('../../8일차/img/ic_03.png') no-repeat;
+                    }
+                }
+            }
+        }
+    
+        .me{
+            justify-content: space-between;
+            background-color: rgb(255, 254, 187);
+            div{
+                width: 90%;
+                @include flex(space-between, 0, column, wrap);
+                .photo{
+                    width: 100%;
+                    padding: 0;
+                    margin: 0 auto;
+                    img{width: 100%;}
+                }
+                .int{
+                    width: 100%;
+                    padding: 0;
+                    flex-direction: column;
+                    margin-top: 40px;
+                    h2{
+                        text-transform: uppercase;
+                        display: block;
+                        line-height: 1;
+    
+                        small{
+                            color: gray;
+                            margin: 1% 0 5%;
+                            font-size: 1rem;
+                            line-height: 0.7;
+                        }
+                    }
+                    b{
+                        text-transform: uppercase;
+                        font-size: 1rem;
+                    }
+                    p{
+                        background-color: #eee;
+                        span{
+                            color: white;
+                            font-weight: bold;
+                            // width: 90%;
+                            display: block;
+                            text-align: right;
+                            padding: 1% 2% 1% 0;
+                            background-color: $point-color;
+                        
+                            $skill : (1: 90%, 2: 80%, 3: 90%, 4: 70%);
+                            @each $key, $value in $skill {
+                                &:nth-of-type(#{$key}){width: $value};
+                            }
+                        // &:nth-of-type(2){width: 80%;}
+                        // &:nth-of-type(3){width: 90%;}
+                        // &:nth-of-type(4){width: 70%;}
+                        }
+                        
+                    }
+                }    
+            }
+        }   
+    }
