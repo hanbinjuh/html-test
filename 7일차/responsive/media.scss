@@ -1,0 +1,44 @@
+$large : 4rem;
+$medium : 2rem;
+$default : 1rem;
+$small : .8rem;
+
+*{box-sizing: border-box;}
+
+article{
+    text-align: center;
+    h2{
+        font-size: $large;
+    }
+    >div{
+
+        >p{
+            font-size: $medium;
+            position: absolute;
+            right: 0; top: 50%;
+            background-color: chartreuse;
+        }
+        div{
+            p{
+                font-size: $small;
+                float: left;
+                padding: 20%;
+                margin: 3%;
+                text-align: center;
+                width: 10%;
+                border: 1px solid rebeccapurple;
+            }
+        }
+    }
+}
+@import "_responsive.scss";
+
+@mixin body($color) {
+    body{background-color: $color;
+    @content;}
+}
+
+@include body(red);
+@include body(yellow){
+    height: 1000px;
+};

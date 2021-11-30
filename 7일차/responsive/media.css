@@ -1,0 +1,64 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+article {
+  text-align: center;
+}
+
+article h2 {
+  font-size: 4rem;
+}
+
+article > div > p {
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: chartreuse;
+}
+
+article > div div p {
+  font-size: 0.8rem;
+  float: left;
+  padding: 20%;
+  margin: 3%;
+  text-align: center;
+  width: 10%;
+  border: 1px solid rebeccapurple;
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+  article {
+    text-align: center;
+  }
+  article h2 {
+    font-size: 4rem;
+  }
+  article > div > p {
+    font-size: 2rem;
+    position: static;
+  }
+  article > div div p {
+    font-size: 5rem;
+    float: none;
+    width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  body {
+    background-color: #b1e9bf;
+  }
+}
+
+body {
+  background-color: red;
+}
+
+body {
+  background-color: yellow;
+  height: 1000px;
+}
+/*# sourceMappingURL=media.css.map */

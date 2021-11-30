@@ -1,0 +1,40 @@
+
+$breakpoint-mobile:320px;
+$breakpoint-tablet:767px;
+$breakpoint-desktop:1024px;
+
+
+@mixin responsive($min, $max) {
+    @media (min-width:$min) and (max-width:$max){
+        // tablet
+        @content
+    }       
+}
+
+@include responsive($breakpoint-tablet, $breakpoint-desktop) {
+    $small : 5rem;
+        article{
+            text-align:center;
+            h2{font-size:$large;}
+            &>div{
+                &>p{
+                    font-size:$medium;
+                    position:static;
+                }
+                div{
+                    p{
+                        font-size: $small;
+                        float:none;
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+
+@include responsive($breakpoint-mobile, $breakpoint-tablet){
+    // mobile
+    body{
+        background-color: rgb(177, 233, 191);
+    }
+}
